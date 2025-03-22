@@ -10,7 +10,7 @@
 
 #### 自行编译
 ```shell
-git clone https://github.com/wu-mx/subinfobot/
+git clone https://github.com/Starry-Vortex/subinfobot/
 cd ./subinfobot
 go get 
 go build
