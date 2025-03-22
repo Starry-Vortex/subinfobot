@@ -1,3 +1,22 @@
+package main
+
+import (
+	"fmt"
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"log"
+	"os"
+	"regexp"
+	"strings"
+	"subinfobot/handler"
+	"time"
+)
+
+var (
+	version string
+	commit  string
+	logger  = log.New(os.Stdout, "", log.Lshortfile|log.Ldate|log.Ltime)
+)
+
 func main() {
     logger.Printf("Subbot %s start.", version)
     bot, err := tgbotapi.NewBotAPI(os.Args[1])
