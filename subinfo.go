@@ -145,7 +145,7 @@ func subInfoMsg(link string, update *tgbotapi.Update, bot *tgbotapi.BotAPI, msg 
 			_, err := handler.EditMsg(fmt.Sprintf("<strong>❌获取失败</strong>\n\n获取订阅<code>%s</code>时发生错误:\n<code>%s</code>", sinf.Link, err), "html", bot, sres)
 			handler.HandleError(err)
 			if update.Message.Chat.Type == "group" || update.Message.Chat.Type == "supergroup" {
-				_, _ = handler.DelMsgWithTimeOut(15*time.Day, bot, sres)
+				_, _ = handler.DelMsgWithTimeOut(15*24*time.Hour, bot, sres)
 			}
 		} else {
 			var resMsg string
@@ -158,10 +158,10 @@ func subInfoMsg(link string, update *tgbotapi.Update, bot *tgbotapi.BotAPI, msg 
 			if sinf.Expired == 1 || sinf.Available == 1 {
 				resMsg = "❌该订阅不可用"
 			}
-			_, err = handler.EditMsg(fmt.Sprintf("🔗<strong>%s</strong>\n<strong>订阅链接:💧</strong><code>%s</code>\n<strong>总共流量:⏳</strong><code>%s</code>\n<strong>剩余流量:⬆️</strong><code>%s</code>\n<strong>已用上传:⬇️</strong><code>%s</code>\n<strong>已用下载:⏱️</strong><code>%s</code>\n<strong>该订阅将于<code>%s</code>过期,%s</strong>\n\n加入群组 @VPN_98K，获取更多订阅节点", resMsg, sinf.Link, sinf.Total, sinf.DataRemain, sinf.Upload, sinf.Download, sinf.ExpireTime, sinf.TimeRemain), "html", bot, sres)
+			_, err = handler.EditMsg(fmt.Sprintf("<strong>%s</strong>\n🔗<strong>订阅链接:</strong><code>%s</code>\n💧<strong>总共流量:</strong><code>%s</code>\n⏳<strong>剩余流量:</strong><code>%s</code>\n⬆️<strong>已用上传:</strong><code>%s</code>\n⬇️<strong>已用下载:</strong><code>%s</code>\n⏱️<strong>该订阅将于<code>%s</code>过期,%s</strong>\n\n\n加入群组 @VPN_98K，获取更多订阅节点", resMsg, sinf.Link, sinf.Total, sinf.DataRemain, sinf.Upload, sinf.Download, sinf.ExpireTime, sinf.TimeRemain), "html", bot, sres)
 			handler.HandleError(err)
 			if update.Message.Chat.Type == "group" || update.Message.Chat.Type == "supergroup" {
-				_, _ = handler.DelMsgWithTimeOut(15*time.Day, bot, sres)
+				_, _ = handler.DelMsgWithTimeOut(15*24*time.Hour, bot, sres)
 			}
 		}
 	}
