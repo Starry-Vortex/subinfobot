@@ -73,7 +73,7 @@ func main() {
                 }
             case "about":
                 msg.ParseMode = "html"
-                msg.Text = fmt.Sprintf("<strong>Subinfo Bot %s</strong>\n\nSubinfo Bot是一款由Golang编写的开源轻量订阅查询Bot。体积小巧，无需任何第三方运行时，即点即用。\n\n<strong>Github:<a href=\"https://github.com/Starry-Vortex/subinfobot\">https://github.com/Starry-Vortex/subinfobot</a></strong>\n<strong>讨论群组:<a href=\"https://t.me/VPN_98K\">@VPN_98K</a></strong>", version)
+                msg.Text = fmt.Sprintf("<strong>Subinfo Bot %s</strong>\n\nSubinfo Bot是一款由Golang编写的开源轻量订阅查询Bot。体积小巧，无需任何第三方运行时，即点即用。\n\n<strong>Github:<a href=\"https://github.com/wu-mx/subinfobot\">https://github.com/wu-mx/subinfobot</a></strong>\n<strong>讨论群组:<a href=\"https://t.me/VPN_98K\">@VPN_98K</a></strong>", version)
                 _, err := handler.SendMsg(bot, &msg)
                 handler.HandleError(err)
             case "get":
