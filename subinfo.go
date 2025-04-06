@@ -198,7 +198,7 @@ func subInfoMsg(link string, update *tgbotapi.Update, bot *tgbotapi.BotAPI, msg 
 			if sinf.ProfileWebPage != "" {
 				airportNameLink = fmt.Sprintf("<a href=\"%s\">%s</a>", sinf.ProfileWebPage, sinf.AirportName)
 			}
-			_, err = handler.EditMsg(fmt.Sprintf("<strong>%s</strong>\n🔗<strong>订阅链接:</strong><code>%s</code>\n✈️<strong>机场名称:</strong> %s\n💧<strong>总共流量:</strong><code>%s</code>\n⏳<strong>剩余流量:</strong><code>%s</code>\n⬆️<strong>已用上传:</strong><code>%s</code>\n⬇️<strong>已用下载:</strong><code>%s</code>\n⏱️<strong>该订阅将于<code>%s</code>过期,%s</strong>\n\n\n加入群组 @VPN_98K，获取更多订阅节点",
+			_, err = handler.EditMsg(fmt.Sprintf("<strong>%s</strong>\n🔗<strong>订阅链接：</strong><code>%s</code>\n✈️<strong>机场名称：</strong> %s\n💧<strong>总共流量：</strong><code>%s</code>\n⏳<strong>剩余流量：</strong><code>%s</code>\n⬆️<strong>已用上传：</strong><code>%s</code>\n⬇️<strong>已用下载：</strong><code>%s</code>\n⏱️<strong>该订阅将于<code>%s</code>过期，%s</strong>\n\n\n加入群组 @VPN_98K，获取更多订阅节点",
 				resMsg, sinf.Link, airportNameLink, sinf.Total, sinf.DataRemain, sinf.Upload, sinf.Download, sinf.ExpireTime, sinf.TimeRemain), "html", bot, sres)
 			handler.HandleError(err)
 			if update.Message.Chat.Type == "group" || update.Message.Chat.Type == "supergroup" {
